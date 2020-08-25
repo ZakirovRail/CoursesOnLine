@@ -56,7 +56,7 @@ def filecopy(fname, fld, dest):
         if not os.path.exists(d):
             os.makedirs(d)
         shutil.copy(fn, d)
-    except IOError, ioerr:
+    except IOError as ioerr:
         print('Error copying file: ' + fname + ' in ' + fld + ' with exception: ' + str(ioerr))
     finally:
         print('Copied file: ' + fname + ' in ' + fld)
@@ -68,7 +68,7 @@ def filemove(fname, fld, dest):
         if not os.path.exists(d):
             os.makedirs(d)
         shutil.move(fn, d)
-    except IOError, ioerr:
+    except IOError as ioerr:
         print('Error moving file: ' + fname + ' in ' + fld + ' with exception: ' + str(ioerr))
     finally:
         print('Moved file: ' + fname + ' in ' + fld)
@@ -78,7 +78,7 @@ def filedelete(fname, fld, dest):
     fn = os.path.join(fld, fname)
     try:
         os.unlink(fn)
-    except IOError, ioerr:
+    except IOError as ioerr:
         print('Error deleting file: ' + fname + ' in ' + fld)
     finally:
         print('Deleted file: ' + fname + ' in ' + fld)
