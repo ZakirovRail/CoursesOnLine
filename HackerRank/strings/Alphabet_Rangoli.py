@@ -1,7 +1,3 @@
-import string
-# alpha = string.ascii_lowercase
-# print(alpha)  # abcdefghijklmnopqrstuvwxyz
-
 
 def print_rangoli(size):
     alpha = 'abcdefghijklmnopqrstuvwxyz'
