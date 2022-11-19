@@ -1,0 +1,8 @@
+1. Install Flask
+$ python3 -m pip install flask
+
+2. To run flask server for Mac
+!!! You should be in the folder where your file is located
+$ export FLASK_APP=flashcards.py
+$ export FLASK_ENV=development
+$ flask run
