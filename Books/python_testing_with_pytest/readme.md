@@ -9,6 +9,9 @@ The headquarters for pytest is https://docs.pytest.org.
 4. $ pip install pytest
 
 
+Before running tests in these repo, you need to install the tasks_proj (be in core dir of the project):
+$ pip install ./tasks_proj/
+
 Running pytest:
 $pytest --help
 
@@ -41,8 +44,6 @@ $ pytest -v -k _raises
 To run tests that have certain names specified by the expression as a substring of the test name and exclude som other tests
 $ pytest -v -k "_raises and not delete"
 
-
-
 ====================================
 
 Tests naming convention:
@@ -59,7 +60,21 @@ This is done in a pytest.ini file:
 xfail_strict=true
 ====================================
 
+If you use fixtures for your tests, you can what's running and when:
+$ $ pytest --setup-show test_add.py -k valid_id
 
+====================================
+Good idea to use in fixtures (and in test as well):
+# GIVEN ....
+# WHEN ....
+# THEN ....
 
+for GIVEN/WHEN/THEN and trying to push as much GIVEN into fixtures for two reasons. First, it makes the test more
+readable and, therefore, more maintainable. Second, an assert or exception in the fixture results in an ERROR, while an
+assert or exception in a test function results in a FAIL.
 
+====================================
+To lists all the fixtures available for the test, including ones that have been renamed
+
+$ pytest --fixtures test_rename_fixture.py
 
